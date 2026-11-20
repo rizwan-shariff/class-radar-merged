@@ -14,13 +14,12 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  experimental: {
-    turbo: {
-      rules: {
-        "*.css": {
-          loaders: ["@tailwindcss/turbopack"],
-          as: "*.css",
-        },
+  // Turbopack config for Tailwind CSS v4 (Next.js 15+)
+  turbopack: {
+    rules: {
+      "*.css": {
+        loaders: ["@tailwindcss/turbopack"],
+        as: "*.css",
       },
     },
   },

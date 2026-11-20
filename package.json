@@ -1,27 +1,11 @@
 {
   "name": "classradar",
   "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
   "scripts": {
-    "backend:lint": "pnpm --dir backend lint",
-    "backend:test": "pnpm --dir backend test",
-    "backend:build": "pnpm --dir backend build",
-    "frontend:build": "pnpm --dir frontend build",
-    "lint": "pnpm backend:lint && pnpm frontend:lint",
-    "test": "pnpm backend:test",
-    "frontend:lint": "pnpm --dir frontend lint"
-  },
-  "packageManager": "pnpm@12.18.0",
-  "pnpm": {
-    "overrides": {
-      "magic-string": "0.30.17"
-    },
-    "onlyBuiltDependencies": [
-      "@prisma/client",
-      "@prisma/engines",
-      "bcrypt",
-      "esbuild",
-      "prisma",
-      "sharp"
-    ]
+    "build": "cd frontend && npm run build"
   }
 }

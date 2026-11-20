@@ -1,9 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
   async rewrites() {
     const backendTarget = process.env.INTERNAL_BACKEND_URL || 'http://backend:3000';
     return [
@@ -17,11 +14,13 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  turbopack: {
-    rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
+  experimental: {
+    turbo: {
+      rules: {
+        "*.css": {
+          loaders: ["@tailwindcss/turbopack"],
+          as: "*.css",
+        },
       },
     },
   },
